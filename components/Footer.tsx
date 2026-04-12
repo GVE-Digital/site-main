@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Linkedin, Instagram, Youtube, Mail } from 'lucide-react'
 
 const serviceLinks = [
@@ -72,21 +73,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Coluna 1 — Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              {/* ⚠️ TODO: substituir pelo logo SVG branco quando disponível */}
-              <div
-                className="flex items-center justify-center rounded-md font-bold text-sm"
-                style={{
-                  background: 'rgba(255,255,255,0.15)',
-                  width: '36px',
-                  height: '36px',
-                  color: '#fff',
-                }}
-                aria-hidden="true"
-              >
-                GVE
-              </div>
-              <span className="font-bold text-lg text-white">GVE Digital</span>
+            <div className="mb-4">
+              <Image
+                src="/gve-logo.png"
+                alt="GVE Digital"
+                width={140}
+                height={40}
+                className="object-contain brightness-0 invert"
+                style={{ height: '32px', width: 'auto' }}
+              />
             </div>
             <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.65)' }}>
               Estratégia, Tecnologia e Previsibilidade para empresas B2B que precisam de demanda qualificada e pipeline comercial consistente.

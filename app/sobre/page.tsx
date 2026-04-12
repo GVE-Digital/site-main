@@ -95,36 +95,14 @@ export default function SobrePage() {
                 className="relative rounded-2xl overflow-hidden shadow-xl"
                 style={{ width: '340px', height: '400px', maxWidth: '100%' }}
               >
-                {/* ⚠️ TODO: substituir pelo arquivo perfil2.png (foto profissional disponível) */}
-                <div
-                  className="w-full h-full flex items-center justify-center text-center"
-                  style={{ backgroundColor: '#e0eaf3' }}
-                  aria-label="Foto de Gabriel Vieira — placeholder"
-                >
-                  <div>
-                    <div
-                      className="w-20 h-20 rounded-full mx-auto mb-3 flex items-center justify-center font-bold text-2xl text-white"
-                      style={{ backgroundColor: '#2f4960' }}
-                      aria-hidden="true"
-                    >
-                      GV
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      ⚠️ TODO: substituir por perfil2.png
-                    </p>
-                  </div>
-                </div>
-                {/*
-                  Descomentar quando o arquivo perfil2.png estiver disponível:
-                  <Image
-                    src="/perfil2.png"
-                    alt="Gabriel Vieira — Fundador da GVE Digital"
-                    fill
-                    className="object-cover object-top"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 340px"
-                  />
-                */}
+                <Image
+                  src="/perfil2.png"
+                  alt="Gabriel Vieira — Fundador da GVE Digital"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 340px"
+                />
               </div>
             </div>
 

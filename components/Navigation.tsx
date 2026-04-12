@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -45,27 +46,15 @@ export default function Navigation() {
       >
         {/* Logo */}
         <Link href="/" aria-label="GVE Digital — ir para o início">
-          {/* ⚠️ TODO: substituir pelo logo SVG real quando disponível */}
-          <div className="flex items-center gap-2">
-            <div
-              className="flex items-center justify-center rounded-md text-white font-bold text-sm"
-              style={{
-                background: '#2f4960',
-                width: '36px',
-                height: '36px',
-                fontSize: '14px',
-              }}
-              aria-hidden="true"
-            >
-              GVE
-            </div>
-            <span
-              className="font-bold text-lg"
-              style={{ color: '#2f4960', letterSpacing: '-0.02em' }}
-            >
-              GVE Digital
-            </span>
-          </div>
+          <Image
+            src="/gve-logo.png"
+            alt="GVE Digital"
+            width={160}
+            height={44}
+            priority
+            className="object-contain"
+            style={{ height: '36px', width: 'auto' }}
+          />
         </Link>
 
         {/* Desktop nav */}
