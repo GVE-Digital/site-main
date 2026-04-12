@@ -14,6 +14,7 @@ Site institucional da **GVE Digital** (GV Estratégia Digital), agência de Mark
 | Hospedagem | Netlify (deploy automático via `main`) |
 | CMS | MDX local (`content/`) |
 | Formulários | Netlify Forms + honeypot + LGPD |
+| OG dinâmico | `@vercel/og` via rota Edge `/og` |
 | Rastreamento | GTM + GA4 + Meta Pixel + CAPI server-side |
 | Atribuição | localStorage TTL 30 dias |
 
@@ -72,11 +73,13 @@ site-main/
 │   │   └── [slug]/page.tsx       # ISR + on-demand
 │   ├── contato/page.tsx
 │   ├── privacidade/page.tsx
+│   ├── og/route.tsx              # OG dinâmico via @vercel/og (Edge runtime)
 │   └── api/revalidate/route.ts   # On-demand revalidation
 ├── components/
 │   ├── ContactForm.tsx           # Formulário GVE completo
 │   ├── Navigation.tsx
 │   ├── Footer.tsx
+│   ├── TrackedLink.tsx           # Link com disparo GTM dataLayer
 │   └── SchemaMarkup.tsx          # JSON-LD helper
 ├── lib/
 │   ├── attribution.ts            # Captura/recupera UTMs, gclid, fbclid
@@ -90,7 +93,12 @@ site-main/
 │   └── cases/                   # Cases em MDX (criar antes do deploy)
 └── public/
     ├── robots.txt
-    └── og/                       # Imagens Open Graph por rota
+    ├── gve-logo-horizont-transparent.png  # Logo horizontal (Navigation, Footer)
+    ├── gve-logo-horizont-escuro.png       # Logo horizontal fundo escuro
+    ├── gve-logo.png                       # Foto logo em escritório (hero)
+    ├── gve-icon.png                       # Ícone da marca
+    ├── gve-favicon.png                    # Favicon
+    └── perfil2.png                        # Foto Gabriel Vieira (página Sobre)
 ```
 
 ---
@@ -158,6 +166,14 @@ draft: false
 
 ## Rastreamento
 
+### IDs de rastreamento
+
+| Serviço | ID |
+|---------|-----|
+| GTM | `GTM-K3T7K8DD` |
+| Meta Pixel | `1276444017301444` |
+| Google Ads | `AW-16646303402` |
+
 ### GTM
 
 Todos os eventos são disparados via `window.dataLayer`. O GTM gerencia Meta Pixel, GA4, Google Ads e Enhanced Conversions. Nenhum script de rastreamento deve ser inserido diretamente no código — tudo passa pelo GTM.
@@ -178,7 +194,7 @@ A função `netlify/functions/capi.mts` recebe o evento do browser, faz hash SHA
 
 Variável de ambiente necessária no Netlify:
 ```
-META_CAPI_TOKEN_<PIXEL_ID>=seu_token_aqui
+META_CAPI_TOKEN_1276444017301444=seu_token_aqui
 ```
 
 O `event_id` é gerado como UUID v4 no cliente e passado tanto para o Pixel browser-side quanto para o CAPI — garantindo deduplicação.
@@ -198,7 +214,7 @@ curl -X POST https://gvedigital.com/api/revalidate \
 
 | Variável | Onde usar | Descrição |
 |----------|-----------|-----------|
-| `META_CAPI_TOKEN_<PIXEL_ID>` | Netlify env | Token da CAPI do Meta |
+| `META_CAPI_TOKEN_1276444017301444` | Netlify env | Token da CAPI do Meta Pixel |
 | `REVALIDATION_SECRET` | Netlify env | Segredo para `/api/revalidate` |
 | `NEXT_PUBLIC_SITE_URL` | `.env.local` | URL base do site |
 
@@ -218,17 +234,29 @@ Configurações em `netlify.toml`:
 
 ## TODOs antes do deploy em produção
 
-- [ ] Inserir GTM ID real em `app/layout.tsx` (substituir `GTM-XXXXXXX`)
-- [ ] Inserir Meta Pixel ID em `app/layout.tsx` e `components/ContactForm.tsx`
-- [ ] Configurar variável `META_CAPI_TOKEN_<PIXEL_ID>` no painel Netlify
-- [ ] Adicionar logo SVG e PNG (fundo transparente + versão branca) em `public/`
-- [ ] Substituir placeholder pelo arquivo `perfil2.png` em `public/`
+- [x] GTM `GTM-K3T7K8DD` configurado em `app/layout.tsx`
+- [x] Meta Pixel `1276444017301444` configurado em `app/layout.tsx` e `ContactForm.tsx`
+- [x] Variável `META_CAPI_TOKEN_1276444017301444` no `.env.local`
+- [x] Logos, favicon e foto do fundador adicionados em `public/`
+- [x] OG dinâmico via `@vercel/og` — sem necessidade de imagens estáticas por rota
+- [x] YouTube `@GVEDigital` no Footer e schema Organization
+- [ ] Configurar `META_CAPI_TOKEN_1276444017301444` no painel Netlify (env var)
 - [ ] Criar ao menos 2 cases reais em `content/cases/`
 - [ ] Escrever conteúdo dos 5 posts do blog e remover `draft: true`
-- [ ] Adicionar URL do YouTube quando disponível
-- [ ] Adicionar imagens OG (1200×630) em `public/og/`
-- [ ] Validar schemas com [Google Rich Results Test](https://search.google.com/test/rich-results)
 - [ ] Configurar `REVALIDATION_SECRET` no Netlify
+- [ ] Validar schemas com [Google Rich Results Test](https://search.google.com/test/rich-results)
+
+### OG dinâmico
+
+As imagens Open Graph são geradas automaticamente pela rota `/og`. Para pré-visualizar:
+
+```
+http://localhost:3000/og?type=blog&title=Título+do+Post&description=Descrição&category=Categoria
+http://localhost:3000/og?type=servico&title=Nome+do+Serviço&description=Descrição
+http://localhost:3000/og?title=GVE+Digital&description=Descrição+geral
+```
+
+Parâmetros aceitos: `type` (blog | servico | case | default), `title`, `description`, `category`.
 
 ---
 
