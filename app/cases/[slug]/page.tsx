@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: c.description,
       url: `https://gvedigital.com/cases/${params.slug}`,
       type: 'article',
-      images: [{ url: `https://gvedigital.com/og/case-${params.slug}.png`, width: 1200, height: 630 }],
+      images: [{ url: `https://gvedigital.com/og?type=case&title=${encodeURIComponent(c.title)}&description=${encodeURIComponent(c.description)}`, width: 1200, height: 630, alt: c.title }],
     },
   }
 }

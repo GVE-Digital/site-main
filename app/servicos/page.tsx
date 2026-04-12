@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Serviços de Marketing Comercial B2B — GVE Digital',
     description: 'Do diagnóstico à escala — cada serviço é parte de um sistema integrado de geração de demanda B2B.',
     url: 'https://gvedigital.com/servicos',
-    images: [{ url: 'https://gvedigital.com/og/servicos.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://gvedigital.com/og?type=servico&title=Servi%C3%A7os+de+Marketing+Comercial+B2B&description=Do+diagn%C3%B3stico+%C3%A0+escala+%E2%80%94+sistema+integrado+de+gera%C3%A7%C3%A3o+de+demanda+B2B', width: 1200, height: 630, alt: 'Serviços GVE Digital' }],
   },
 }
 

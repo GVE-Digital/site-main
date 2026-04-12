@@ -47,7 +47,7 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" aria-label="GVE Digital — ir para o início">
           <Image
-            src="/gve-logo.png"
+            src="/gve-logo-horizont-transparent.png"
             alt="GVE Digital"
             width={160}
             height={44}

@@ -208,13 +208,12 @@ export default function ContactForm({ formType = 'contato', className = '' }: Co
       })
 
       // CAPI (server-side) — disparado em segundo plano
-      // ⚠️ TODO: substituir PIXEL_ID_PLACEHOLDER pelo ID real do pixel
       const nameParts = fields.nome.trim().split(' ')
       fetch('/api/capi', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          pixelId:        'PIXEL_ID_PLACEHOLDER', // ⚠️ TODO: inserir PIXEL_ID
+          pixelId:        '1276444017301444',
           eventName:      'Lead',
           eventId,
           eventSourceUrl: pageUrl,

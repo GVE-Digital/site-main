@@ -75,7 +75,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-4">
               <Image
-                src="/gve-logo.png"
+                src="/gve-logo-horizont-transparent.png"
                 alt="GVE Digital"
                 width={140}
                 height={40}
@@ -212,14 +212,21 @@ export default function Footer() {
               >
                 <Instagram size={16} aria-hidden="true" />
               </a>
-              {/* ⚠️ TODO: adicionar link do YouTube quando disponível */}
               <a
-                href="#"
-                className="flex items-center justify-center w-9 h-9 rounded-md transition-colors opacity-40 cursor-not-allowed"
+                href="https://www.youtube.com/@GVEDigital"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-md transition-colors"
                 style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.75)' }}
-                aria-label="YouTube da GVE Digital (em breve)"
-                aria-disabled="true"
-                onClick={e => e.preventDefault()}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.2)'
+                  e.currentTarget.style.color = '#fff'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
+                  e.currentTarget.style.color = 'rgba(255,255,255,0.75)'
+                }}
+                aria-label="YouTube da GVE Digital (abre em nova aba)"
               >
                 <Youtube size={16} aria-hidden="true" />
               </a>

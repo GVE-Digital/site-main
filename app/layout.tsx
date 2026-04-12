@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: 'https://gvedigital.com',
     images: [
       {
-        url: 'https://gvedigital.com/og/home.png',
+        url: 'https://gvedigital.com/og?title=GVE+Digital+%7C+Marketing+Comercial+B2B&description=Demanda+qualificada+e+previsibilidade+comercial+para+empresas+B2B',
         width: 1200,
         height: 630,
         alt: 'GVE Digital — Marketing Comercial B2B',
@@ -55,6 +55,11 @@ export const metadata: Metadata = {
     title: 'GVE Digital | Estratégia, Tecnologia e Previsibilidade',
     description: 'Agência de Marketing Comercial B2B com metodologia GVED proprietária.',
   },
+  icons: {
+    icon: '/gve-favicon.png',
+    shortcut: '/gve-favicon.png',
+    apple: '/gve-favicon.png',
+  },
   robots: {
     index: true,
     follow: true,
@@ -65,10 +70,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  icons: {
-    icon: '/favicon.ico',
-    // ⚠️ TODO: adicionar apple-touch-icon e outros ícones da marca
   },
 }
 
@@ -119,7 +120,7 @@ const organizationSchema = {
   sameAs: [
     'https://www.linkedin.com/company/gvedigital-assessoria-de-marketing/',
     'https://www.instagram.com/gvedigitaltech/',
-    // ⚠️ TODO: adicionar URL do YouTube quando disponível
+    'https://www.youtube.com/@GVEDigital',
   ],
   numberOfEmployees: {
     '@type': 'QuantitativeValue',
@@ -132,27 +133,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" className={inter.variable}>
       <head>
         {/* ─── Google Tag Manager ─────────────────────────────────── */}
-        {/* ⚠️ TODO: inserir GTM-XXXXXXX */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');`,
+})(window,document,'script','dataLayer','GTM-K3T7K8DD');`,
+          }}
+        />
+        {/* ─── Google Ads ─────────────────────────────────────────── */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16646303402" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16646303402');`,
           }}
         />
         {/* ─── Meta Pixel (browser-side) ──────────────────────────── */}
-        {/* ⚠️ TODO: inserir PIXEL_ID abaixo — o GTM pode gerenciar isso também */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1276444017301444');fbq('track','PageView');`,
+          }}
+        />
+        {/* ─── Meta Domain Verification ───────────────────────────── */}
+        <meta name="facebook-domain-verification" content="6dgfre2sqo8n38s4m7cah4k0p4cx6c" />
         {/* ─── Schema Organization ────────────────────────────────── */}
         <SchemaMarkup schema={organizationSchema} />
       </head>
       <body className="font-sans bg-gve-bg text-gve-text antialiased">
         {/* GTM noscript fallback */}
-        {/* ⚠️ TODO: inserir GTM-XXXXXXX */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K3T7K8DD"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import TrackedLink from '@/components/TrackedLink'
 import {
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: 'GVE Digital | Marketing Comercial B2B',
     description: 'Demanda qualificada e previsibilidade comercial em até 6 meses com metodologia GVED proprietária.',
     url: 'https://gvedigital.com',
-    images: [{ url: 'https://gvedigital.com/og/home.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://gvedigital.com/og?title=GVE+Digital+%7C+Marketing+Comercial+B2B&description=Demanda+qualificada+e+previsibilidade+comercial+para+empresas+B2B+com+metodologia+GVED+propriet%C3%A1ria', width: 1200, height: 630, alt: 'GVE Digital' }],
   },
 }
 
@@ -152,57 +153,82 @@ export default function HomePage() {
         />
 
         <div className="container mx-auto px-6" style={{ maxWidth: '1280px', position: 'relative' }}>
-          <div className="max-w-3xl">
-            <p
-              className="inline-flex items-center gap-2 text-sm font-semibold mb-5 px-3 py-1.5 rounded-full"
-              style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.85)' }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" aria-hidden="true" />
-              Mais de 40 empresas B2B atendidas desde 2023
-            </p>
-
-            <h1
-              className="font-bold text-white mb-6 leading-tight"
-              style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', letterSpacing: '-0.02em' }}
-            >
-              Demanda qualificada e previsibilidade comercial para o seu B2B
-            </h1>
-
-            <p
-              className="text-lg md:text-xl mb-8 leading-relaxed"
-              style={{ color: 'rgba(255,255,255,0.78)', maxWidth: '52ch' }}
-            >
-              A GVE Digital estrutura o marketing comercial da sua empresa B2B do zero — ICP, copy estratégico, funil de aquisição, mídia paga e integração com CRM — com metodologia proprietária e entregáveis validados fase a fase.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <TrackedLink
-                href="/contato"
-                className="btn btn-lg"
-                style={{ backgroundColor: '#fff', color: '#2f4960', borderColor: '#fff', fontWeight: 700 }}
-                event="cta_click"
-                eventData={{ cta_text: 'Agendar diagnóstico gratuito', cta_destination: '/contato', page_section: 'hero' }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Texto */}
+            <div>
+              <p
+                className="inline-flex items-center gap-2 text-sm font-semibold mb-5 px-3 py-1.5 rounded-full"
+                style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.85)' }}
               >
-                Agendar diagnóstico gratuito
-                <ArrowRight size={16} aria-hidden="true" />
-              </TrackedLink>
-              <Link href="/servicos/gved-marketing-b2b" className="btn btn-lg btn-outline-white">
-                Ver metodologia GVED
-              </Link>
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" aria-hidden="true" />
+                Mais de 40 empresas B2B atendidas desde 2023
+              </p>
+
+              <h1
+                className="font-bold text-white mb-6 leading-tight"
+                style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', letterSpacing: '-0.02em' }}
+              >
+                Demanda qualificada e previsibilidade comercial para o seu B2B
+              </h1>
+
+              <p
+                className="text-lg md:text-xl mb-8 leading-relaxed"
+                style={{ color: 'rgba(255,255,255,0.78)', maxWidth: '52ch' }}
+              >
+                A GVE Digital estrutura o marketing comercial da sua empresa B2B do zero — ICP, copy estratégico, funil de aquisição, mídia paga e integração com CRM — com metodologia proprietária e entregáveis validados fase a fase.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <TrackedLink
+                  href="/contato"
+                  className="btn btn-lg"
+                  style={{ backgroundColor: '#fff', color: '#2f4960', borderColor: '#fff', fontWeight: 700 }}
+                  event="cta_click"
+                  eventData={{ cta_text: 'Agendar diagnóstico gratuito', cta_destination: '/contato', page_section: 'hero' }}
+                >
+                  Agendar diagnóstico gratuito
+                  <ArrowRight size={16} aria-hidden="true" />
+                </TrackedLink>
+                <Link href="/servicos/gved-marketing-b2b" className="btn btn-lg btn-outline-white">
+                  Ver metodologia GVED
+                </Link>
+              </div>
+
+              <div className="mt-10 flex flex-wrap items-center gap-6">
+                <div className="flex items-center gap-2">
+                  <Building2 size={16} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
+                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>40+ empresas B2B atendidas</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 size={16} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
+                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>Parceiros Kommo CRM e Pipedrive</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TrendingUp size={16} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
+                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>Desde 2023, foco exclusivo em B2B</span>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-2">
-                <Building2 size={16} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>40+ empresas B2B atendidas</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 size={16} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>Parceiros Kommo CRM e Pipedrive</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <TrendingUp size={16} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>Desde 2023, foco exclusivo em B2B</span>
+            {/* Imagem — visível apenas em desktop */}
+            <div className="hidden lg:block">
+              <div
+                className="relative rounded-2xl overflow-hidden shadow-2xl"
+                style={{ height: '480px' }}
+              >
+                <Image
+                  src="/gve-logo.png"
+                  alt="Escritório GVE Digital"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 1024px) 0px, 50vw"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(135deg, rgba(47,73,96,0.15) 0%, transparent 60%)' }}
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>
@@ -395,9 +421,9 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-5 mb-8">
                 {[
                   { num: '40+', label: 'empresas B2B atendidas' },
-                  { num: '2023', label: 'ano de fundação' },
+                  { num: '3+', label: 'anos atuando com marketing B2B' },
                   { num: '6m', label: 'para previsibilidade comercial' },
-                  { num: '5', label: 'fases de metodologia proprietária' },
+                  { num: 'R$300k+', label: 'em mídia paga gerenciada' },
                 ].map(({ num, label }) => (
                   <div
                     key={label}

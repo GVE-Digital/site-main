@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import SchemaMarkup from '@/components/SchemaMarkup'
-import { Linkedin, ArrowRight, CheckCircle2, Users, Calendar } from 'lucide-react'
+import { Linkedin, ArrowRight, TrendingUp, Users, Calendar } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Sobre a GVE Digital | Marketing Comercial B2B',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Sobre a GVE Digital',
     description: 'Especialistas em performance B2B — sem estrutura de agência tradicional, com foco total em resultado comercial mensurável.',
     url: 'https://gvedigital.com/sobre',
-    images: [{ url: 'https://gvedigital.com/og/sobre.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://gvedigital.com/og?title=Sobre+a+GVE+Digital&description=Especialistas+em+performance+B2B+%E2%80%94+foco+total+em+resultado+comercial+mensur%C3%A1vel', width: 1200, height: 630, alt: 'Sobre a GVE Digital' }],
   },
 }
 
@@ -154,8 +154,8 @@ export default function SobrePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { num: '40+', label: 'empresas B2B atendidas', icon: <Users size={20} /> },
-              { num: '2023', label: 'ano de fundação', icon: <Calendar size={20} /> },
-              { num: '5', label: 'fases de metodologia', icon: <CheckCircle2 size={20} /> },
+              { num: '3+', label: 'anos atuando com marketing B2B', icon: <Calendar size={20} /> },
+              { num: 'R$300k+', label: 'em mídia paga gerenciada', icon: <TrendingUp size={20} /> },
               { num: 'BR', label: 'atendimento nacional', icon: <ArrowRight size={20} /> },
             ].map(({ num, label, icon }) => (
               <div

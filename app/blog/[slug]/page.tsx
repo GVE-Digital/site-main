@@ -34,9 +34,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: ['Gabriel Vieira'],
       images: [
         {
-          url: post.image || `https://gvedigital.com/og/blog-${params.slug}.png`,
+          url: `https://gvedigital.com/og?type=blog&title=${encodeURIComponent(post.title)}&description=${encodeURIComponent(post.description)}&category=${encodeURIComponent(post.category || '')}`,
           width: 1200,
           height: 630,
+          alt: post.title,
         },
       ],
     },

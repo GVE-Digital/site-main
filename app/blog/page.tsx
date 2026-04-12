@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Blog GVE Digital | Marketing Comercial B2B',
     description: 'Estratégia, mídia paga e geração de demanda para empresas B2B.',
     url: 'https://gvedigital.com/blog',
-    images: [{ url: 'https://gvedigital.com/og/blog.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://gvedigital.com/og?type=blog&title=Blog+GVE+Digital&description=Estrat%C3%A9gia%2C+m%C3%ADdia+paga+e+gera%C3%A7%C3%A3o+de+demanda+para+empresas+B2B', width: 1200, height: 630, alt: 'Blog GVE Digital' }],
   },
 }
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Cases de Marketing B2B — GVE Digital',
     description: 'Resultados reais: veja como empresas B2B melhoraram seu pipeline com a metodologia GVED.',
     url: 'https://gvedigital.com/cases',
-    images: [{ url: 'https://gvedigital.com/og/cases.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://gvedigital.com/og?type=case&title=Cases+de+Marketing+B2B&description=Resultados+reais%3A+empresas+B2B+com+pipeline+previs%C3%ADvel+com+metodologia+GVED', width: 1200, height: 630, alt: 'Cases GVE Digital' }],
   },
 }
 

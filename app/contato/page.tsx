@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Contato | Agendar Diagnóstico Gratuito — GVE Digital',
     description: 'Fale com especialistas em marketing comercial B2B. Diagnóstico sem compromisso.',
     url: 'https://gvedigital.com/contato',
-    images: [{ url: 'https://gvedigital.com/og/contato.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://gvedigital.com/og?title=Agendar+Diagn%C3%B3stico+Gratuito&description=Fale+com+especialistas+em+marketing+comercial+B2B.+Diagn%C3%B3stico+sem+compromisso.', width: 1200, height: 630, alt: 'Contato GVE Digital' }],
   },
 }
 
