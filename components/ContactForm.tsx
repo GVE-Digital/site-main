@@ -187,8 +187,8 @@ export default function ContactForm({ formType = 'contato', className = '' }: Co
     }
 
     try {
-      // Netlify Forms
-      const response = await fetch('/', {
+      // Netlify Forms — POST para /netlify-forms (página estática detectada pelo Netlify)
+      const response = await fetch('/netlify-forms', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData as Record<string, string>).toString(),
