@@ -12,43 +12,129 @@ keywords:
   - "como gerar leads qualificados b2b"
 author: "Gabriel Vieira"
 image: ""
-draft: true
+draft: false
 ---
 
-<!-- ⚠️ TODO: conteúdo do post pendente de redação.
+A maioria das empresas B2B tem campanhas de mídia paga. Poucas têm um funil. Quase nenhuma tem um sistema.
 
-Estrutura sugerida para este artigo:
+A diferença não é técnica — é estrutural. Campanhas geram cliques. Funis geram leads. Sistemas geram demanda previsível. E a distância entre os três está, quase sempre, nas conexões que ninguém configurou: entre o clique e a landing page, entre o formulário e o CRM, entre o comercial e o algoritmo de mídia.
 
-## Introdução: o funil que a maioria das empresas B2B não tem
-A maioria das empresas tem campanhas. Poucas têm funil. Nenhuma tem sistema.
+Este artigo descreve as 5 etapas de um funil de aquisição B2B que funciona — não como teoria de funil, mas como arquitetura operacional.
 
-## Etapa 1: Campanha (Meta Ads + Google Ads)
-Onde o ICP encontra a mensagem certa. Papel de cada canal.
-Copy estratégico alinhado ao momento de compra.
+---
 
-## Etapa 2: Landing Page (LP de conversão)
-Por que a LP é diferente do site institucional.
-Elementos obrigatórios de uma LP B2B que converte: headline, prova social, formulário com filtro.
+## Etapa 1: Campanha — a mensagem certa para o momento certo
 
-## Etapa 3: Formulário com qualificação
-O formulário como primeiro filtro de MQL.
-Campo de "principal dor" como segmentador de intenção.
-Campos ocultos de atribuição (UTM, gclid, fbclid) — rastreabilidade total.
+O funil começa antes do clique. Começa com a pergunta: **o decisor que vai ver esse anúncio já sabe que tem um problema, ou ainda não sabe?**
 
-## Etapa 4: CRM e cadência de follow-up
-O lead entra no CRM automaticamente. SDR recebe notificação.
-Cadência de contato nas primeiras 24h (momento de maior intenção).
-SLA entre marketing e comercial.
+A resposta determina tudo: o canal, a mensagem, o formato, o destino do clique.
 
-## Etapa 5: Feedback loop (MQL → algoritmo de mídia)
-O comercial informa quais leads fecharam. Marketing otimiza audiências.
-Enhanced Conversions para Google, CAPI para Meta — o dado offline retroalimenta o algoritmo.
+**Google Ads** alcança decisores com intenção ativa. Quando alguém pesquisa *"consultoria de marketing B2B"* ou *"como gerar leads qualificados para software"*, ela já está no modo busca por solução. O papel do anúncio aqui é capturar esse momento — com headline direta, relevância ao termo buscado e CTA que promete resolver o problema.
 
-## Mensuração: o que acompanhar semana a semana
+**Meta Ads** alcança decisores que ainda não estão procurando, mas pertencem ao perfil ideal. O papel do anúncio aqui é diferente: interromper o scroll com uma mensagem que faz sentido para aquele perfil, criar reconhecimento de problema e plantar o interesse que vai se transformar em busca ou em conversão direta mais tarde.
 
-## Conclusão + CTA
+A armadilha mais comum é usar a mesma copy nos dois canais. Não funciona. Quem já está buscando não precisa ser convencido de que tem um problema — precisa ser convencido de que você é a melhor solução. Quem está navegando no Instagram não quer uma proposta comercial — quer reconhecer o próprio problema na mensagem do anúncio.
 
-Palavras-chave a distribuir no texto:
-funil b2b, geração de demanda b2b, agência marketing b2b,
-leads qualificados b2b, como gerar leads qualificados b2b
--->
+**Regra prática:** Google otimiza para conversão direta. Meta otimiza para criar e alimentar demanda. Os dois canais devem estar ativos, com papéis definidos e orçamento proporcional ao estágio atual da operação.
+
+---
+
+## Etapa 2: Landing Page — conversão ou desperdício de clique
+
+O clique que não converte custa dinheiro duas vezes: o CPL do anúncio e a oportunidade perdida.
+
+A landing page de conversão B2B não é o site institucional. O site existe para construir autoridade, gerar tráfego orgânico e validar a empresa para decisores que chegam por indicação. A LP existe para uma única função: transformar o clique pago em um lead identificado.
+
+Isso muda completamente o design, o copy e a estrutura da página.
+
+**O que uma LP B2B que converte tem:**
+
+**Headline específica para a dor do ICP.** Não o nome da empresa, não o slogan. A primeira coisa que o decisor lê precisa ser o problema dele, descrito com precisão. *"Sua equipe de vendas está perdendo tempo com leads frios?"* converte mais do que *"Soluções de marketing digital para sua empresa."*
+
+**Prova social contextual.** Cases de clientes do mesmo setor ou porte. Logos de empresas reconhecidas. Depoimentos com resultado numérico. O decisor B2B precisa ver que funcionou para alguém igual a ele antes de qualquer contato.
+
+**Formulário objetivo.** Máximo 5 a 6 campos. Nome, WhatsApp, e-mail, empresa, cargo e uma pergunta qualificadora. Cada campo adicional reduz a taxa de conversão. Se precisar de mais informação para qualificar o lead, o lugar para capturar é na conversa com o SDR — não no formulário.
+
+**CTA direto e sem ambiguidade.** *"Solicitar diagnóstico"*, *"Falar com especialista"*, *"Agendar demonstração"*. Não *"Saiba mais"*, não *"Clique aqui"*.
+
+**Uma observação sobre canal de origem:** Lead que vem do Google Ads (intenção ativa) e lead que vem do Meta Ads (interrompido no feed) chegam com contextos diferentes. Em operações mais maduras, vale ter versões distintas de headline e copy por canal de origem — a mensagem que confirma intenção converte melhor para quem veio do Google; a mensagem que abre pelo problema converte melhor para quem veio do Meta.
+
+---
+
+## Etapa 3: Formulário — o primeiro filtro de MQL
+
+O formulário é onde o volume começa a virar qualidade — ou continua sendo apenas volume.
+
+Além dos campos visíveis ao lead, existem campos **ocultos** que precisam ser capturados no momento do submit e salvos no CRM junto com o contato. São eles que tornam a operação rastreável do clique até o fechamento:
+
+- **UTMs** (utm_source, utm_medium, utm_campaign): identificam de qual campanha, canal e conjunto de anúncios o lead veio
+- **fbclid**: ID de clique do Meta, essencial para atribuição correta e para o loop de retorno via CAPI
+- **gclid**: ID de clique do Google, necessário para Enhanced Conversions
+- **URL da landing page**: registra qual versão da LP converteu o lead
+
+Sem esses campos, o CRM tem o contato mas não tem o contexto. E sem contexto, não é possível saber quais campanhas geram leads que viram negócio — apenas quais geram formulários preenchidos.
+
+**A pergunta qualificadora** é o campo mais subestimado do formulário B2B. Em vez de cinco campos de texto livre que o lead preenche de qualquer jeito, uma pergunta bem escolhida entrega contexto real de intenção ao SDR: *"Qual o maior desafio comercial da sua empresa hoje?"* ou *"Quantas oportunidades novas sua equipe precisa gerar por mês?"* — com opções de dropdown ou texto livre.
+
+A resposta dessa pergunta faz três coisas: filtra leads fora do ICP, personaliza a abordagem do SDR no primeiro contato e, quando salva no CRM com o lead, aumenta em 30 a 50% a taxa de qualificação para MQL.
+
+---
+
+## Etapa 4: CRM e cadência de follow-up — o lead não espera
+
+Um lead B2B que acabou de preencher um formulário tem a maior intenção que vai ter em toda a jornada. Essa janela dura, em média, 24 horas. Depois disso, o interesse resfria, a vida continua e o lead vai para a concorrência — ou simplesmente esquece que preencheu.
+
+Por isso, o fluxo do formulário ao CRM não pode depender de ação manual. O lead precisa entrar no CRM automaticamente, com todos os campos capturados, e o SDR precisa ser notificado em minutos — não no dia seguinte.
+
+**A arquitetura mínima de integração:**
+
+1. Lead submete o formulário na LP
+2. Webhook dispara automaticamente para a ferramenta de automação (Make, Zapier ou similar)
+3. Lead é criado no CRM com todos os dados — incluindo UTMs, fbclid/gclid e resposta qualificadora
+4. SDR recebe notificação imediata (WhatsApp, Slack ou e-mail)
+5. SDR inicia contato em até 2 horas
+
+**O SLA entre marketing e comercial** é onde a maioria das operações B2B quebra silenciosamente. Marketing gera o lead e entrega para vendas. Vendas aborda em três dias. O lead já fez uma reunião com o concorrente. Ninguém acha que foi culpa deles.
+
+Um SLA claro define: qual é o prazo máximo de primeiro contato (recomendado: 2 horas em horário comercial), qual é a cadência mínima de tentativas (3 a 5 touchpoints em 5 dias úteis) e o que acontece com leads que não respondem (nurturing automático, reclassificação de status).
+
+**Qualificação no CRM:** cada lead precisa ser classificado com um status claro após o contato do SDR — MQL (qualificado, passa para oportunidade comercial), Não Qualificado (fora do ICP, arquivado com motivo) ou Nurturing (interesse presente, mas sem timing de compra agora). Esse status é o que alimenta a etapa seguinte — e é o dado mais valioso que a operação de mídia tem.
+
+---
+
+## Etapa 5: Feedback loop — o dado do comercial retroalimenta o algoritmo
+
+Esta é a etapa que separa uma operação de geração de leads qualificados de uma operação que apenas gera formulários.
+
+Quando o SDR qualifica um lead como MQL — ou quando um negócio é fechado — esse sinal precisa voltar para os algoritmos de mídia. Não manualmente, automaticamente.
+
+**Para o Meta Ads:** via Conversions API (CAPI), o evento `Lead_Qualificado` é enviado ao Meta quando o CRM atualiza o status do lead. O Meta recebe a informação de que aquela conversão específica resultou em uma oportunidade real — e passa a buscar mais usuários com o mesmo perfil de comportamento.
+
+**Para o Google Ads:** via Enhanced Conversions for Leads (ou Offline Conversion Import), o mesmo sinal é enviado ao Google com o gclid capturado no formulário. O Smart Bidding aprende a otimizar não apenas para form fills, mas para leads que realmente avançam no pipeline.
+
+Sem esse loop, o algoritmo otimiza para quem preenche formulário. Com ele, otimiza para quem vira cliente. Em 60 a 90 dias, a diferença no perfil dos leads gerados é perceptível: menos volume de leads fora do ICP, mais leads com timing e autoridade de compra.
+
+**O que acompanhar semana a semana:**
+
+| Métrica | O que indica |
+| --- | --- |
+| CPL (custo por lead) | Eficiência da campanha |
+| Taxa de MQL (leads / MQLs) | Qualidade dos leads gerados |
+| Taxa de conversão da LP | Performance da landing page |
+| Tempo médio de primeiro contato | Velocidade do processo comercial |
+| Taxa MQL → SQL | Eficiência do SDR e alinhamento de ICP |
+| CPA (custo por oportunidade) | ROI real do investimento em mídia |
+
+CPL baixo com taxa de MQL baixa é pior do que CPL alto com taxa de MQL alta. A métrica que importa para geração de demanda B2B não é o custo do lead — é o custo da oportunidade comercial qualificada.
+
+---
+
+## As conexões que a maioria não configura
+
+Um funil de aquisição B2B não falha por falta de campanha. Falha nas conexões: entre o clique e a LP, entre o formulário e o CRM, entre o comercial e o algoritmo.
+
+Cada etapa sem integração adequada é um ponto de perda que acumula silenciosamente. O resultado é uma operação que gera leads, mas não gera demanda previsível — porque o sistema não aprende, o SDR está sempre começando do zero e o marketing não sabe o que está funcionando de verdade.
+
+Montar essa arquitetura completa — campanha, LP, formulário qualificado, CRM integrado e feedback loop de mídia — é o que transforma budget de mídia em pipeline comercial previsível.
+
+Se você quer entender como essa estrutura se aplica ao seu negócio, o diagnóstico gratuito analisa cada etapa da sua operação atual e identifica onde estão os pontos de perda.
