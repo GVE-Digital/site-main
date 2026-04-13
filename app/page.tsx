@@ -469,7 +469,40 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* Case em destaque — temporariamente oculto até adicionar cases reais */}
+              {/* Case em destaque */}
+              <div className="card p-6">
+                <h3 className="font-bold text-sm uppercase tracking-wide text-gray-400 mb-4">
+                  Case em destaque
+                </h3>
+                <span
+                  className="text-xs font-bold px-2.5 py-1 rounded-full inline-block mb-3"
+                  style={{ backgroundColor: '#e0eaf3', color: '#2f4960' }}
+                >
+                  Serviços B2B
+                </span>
+                <p className="font-bold text-base mb-1" style={{ color: '#2f4960' }}>
+                  Consultoria tributária B2B
+                </p>
+                <p className="text-sm text-gray-500 mb-4">
+                  Meta Ads reestruturado com ICP e critérios de MQL definidos — quase totalidade dos leads qualificados.
+                </p>
+                <div
+                  className="p-3 rounded-lg mb-4 text-sm font-medium"
+                  style={{ backgroundColor: '#f0f5fa', color: '#2f4960' }}
+                >
+                  → R$ 150.000+ em retorno gerado em 90 dias
+                </div>
+                <TrackedLink
+                  href="/cases/consultoria-tributaria-b2b"
+                  className="inline-flex items-center gap-1 text-sm font-semibold"
+                  style={{ color: '#507c9f' }}
+                  event="cta_click"
+                  eventData={{ cta_text: 'Ver case completo', cta_destination: '/cases/consultoria-tributaria-b2b', page_section: 'prova_social' }}
+                >
+                  Ver case completo
+                  <ChevronRight size={14} aria-hidden="true" />
+                </TrackedLink>
+              </div>
             </div>
           </div>
         </div>
@@ -499,7 +532,14 @@ export default function HomePage() {
               Agendar diagnóstico gratuito
               <ArrowRight size={16} aria-hidden="true" />
             </TrackedLink>
-            {/* Botão "Ver cases" — temporariamente oculto até adicionar cases reais */}
+            <TrackedLink
+              href="/cases"
+              className="btn btn-lg btn-outline-white"
+              event="cta_click"
+              eventData={{ cta_text: 'Ver cases', cta_destination: '/cases', page_section: 'cta_final' }}
+            >
+              Ver cases
+            </TrackedLink>
           </div>
 
           <p className="mt-5 text-xs" style={{ color: 'rgba(255,255,255,0.45)' }}>

@@ -14,7 +14,7 @@ const serviceLinks = [
 
 const companyLinks = [
   { href: '/sobre',       label: 'Sobre a GVE' },
-  // { href: '/cases', label: 'Cases' }, // temporariamente oculto até adicionar cases reais
+  { href: '/cases',        label: 'Cases' },
   { href: '/blog',        label: 'Blog' },
   { href: '/contato',     label: 'Contato' },
   { href: '/privacidade', label: 'Política de Privacidade' },

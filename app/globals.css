@@ -386,6 +386,14 @@ img, video {
   font-size: 0.9375rem;
 }
 
+@media (max-width: 767px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 .prose thead {
   background-color: #2f4960;
   color: #fff;

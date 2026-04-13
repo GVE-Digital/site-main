@@ -205,8 +205,8 @@ export default function BlogPage() {
             </p>
             <Link
               href="/contato"
-              className="btn btn-lg"
-              style={{ backgroundColor: '#fff', color: '#2f4960', borderColor: '#fff', fontWeight: 700 }}
+              className="btn btn-lg inline-flex"
+              style={{ backgroundColor: '#fff', color: '#2f4960', borderColor: '#fff', fontWeight: 700, maxWidth: '100%' }}
             >
               Agendar diagnóstico gratuito
               <ArrowRight size={16} aria-hidden="true" />

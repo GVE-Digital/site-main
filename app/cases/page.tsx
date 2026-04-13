@@ -129,7 +129,7 @@ export default function CasesPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {cases.map(c => (
-                <article key={c.slug} className="card p-7 group" aria-label={c.title}>
+                <article key={c.slug} className="card p-7 group flex flex-col" aria-label={c.title}>
                   <div className="flex items-center gap-2 mb-3">
                     <span
                       className="text-xs font-bold px-2.5 py-1 rounded-full"
@@ -159,7 +159,7 @@ export default function CasesPage() {
 
                   <Link
                     href={`/cases/${c.slug}`}
-                    className="inline-flex items-center gap-1 text-sm font-semibold"
+                    className="inline-flex items-center gap-1 text-sm font-semibold mt-auto"
                     style={{ color: '#507c9f' }}
                   >
                     Ver case completo

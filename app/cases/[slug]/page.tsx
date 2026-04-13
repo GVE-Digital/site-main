@@ -148,24 +148,36 @@ export default function CasePage({ params }: Props) {
                 </div>
               )}
 
-              {/* Voltar */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <Link
-                  href="/cases"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold"
-                  style={{ color: '#507c9f' }}
-                >
-                  <ChevronLeft size={16} aria-hidden="true" />
-                  Todos os cases
-                </Link>
+              {/* CTA inline */}
+              <div
+                className="rounded-2xl p-7 mb-8"
+                style={{ backgroundColor: '#2f4960' }}
+              >
+                <h3 className="font-bold text-white text-lg mb-2">
+                  Seu negócio pode ser o próximo case.
+                </h3>
+                <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  Agende um diagnóstico gratuito e veja, com dados reais do seu cenário, como a metodologia GVED pode estruturar sua geração de demanda B2B.
+                </p>
                 <Link
                   href="/contato"
-                  className="btn btn-primary"
+                  className="btn"
+                  style={{ backgroundColor: '#fff', color: '#2f4960', borderColor: '#fff', fontWeight: 700 }}
                 >
-                  Quero um resultado assim
+                  Agendar diagnóstico gratuito
                   <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               </div>
+
+              {/* Voltar */}
+              <Link
+                href="/cases"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold"
+                style={{ color: '#507c9f' }}
+              >
+                <ChevronLeft size={16} aria-hidden="true" />
+                Todos os cases
+              </Link>
             </div>
 
             {/* Sidebar — formulário */}
