@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ContactForm from '@/components/ContactForm'
@@ -148,22 +147,6 @@ export default function BlogPostPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Imagem de capa gerada dinamicamente via /og */}
-      <div className="bg-white">
-        <div className="container mx-auto px-6" style={{ maxWidth: '1280px' }}>
-          <div className="relative w-full overflow-hidden rounded-b-2xl shadow-lg" style={{ maxWidth: '860px', aspectRatio: '1200/630' }}>
-            <Image
-              src={post.image || `/og?type=blog&title=${encodeURIComponent(post.title)}&description=${encodeURIComponent(post.description)}&category=${encodeURIComponent(post.category || '')}`}
-              alt={post.title}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, 860px"
-              unoptimized={!post.image}
-            />
-          </div>
-        </div>
-      </div>
 
       {/* Post body */}
       <section className="section" style={{ backgroundColor: '#f2f2f2' }}>
