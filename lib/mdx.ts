@@ -80,7 +80,14 @@ export function getAllPostSlugs(): string[] {
   return fs
     .readdirSync(dir)
     .filter(f => f.endsWith('.mdx'))
-    .map(f => f.replace(/\.mdx$/, ''))
+    .map(f => {
+      const slug = f.replace(/\.mdx$/, '')
+      const raw  = fs.readFileSync(path.join(dir, f), 'utf8')
+      const { data } = matter(raw)
+      return { slug, draft: !!data.draft }
+    })
+    .filter(p => !p.draft)
+    .map(p => p.slug)
 }
 
 // ─────────────────────────────────────────
