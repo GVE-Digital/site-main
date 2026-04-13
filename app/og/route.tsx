@@ -6,12 +6,12 @@ export const runtime = 'edge'
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl
 
-  // Carrega o favicon para usar na imagem OG
   const faviconSrc = `${origin}/gve-favicon.png`
+  const logoSrc    = `${origin}/gve-logo-horizont-transparent.png`
 
   const title       = searchParams.get('title')       || 'GVE Digital'
-  const description = searchParams.get('description') || 'Marketing Comercial B2B'
-  const type        = searchParams.get('type')        || 'default' // blog | servico | case | default
+  const description = searchParams.get('description') || 'Estratégia, Tecnologia e Previsibilidade para empresas B2B'
+  const type        = searchParams.get('type')        || 'default'
   const category    = searchParams.get('category')    || ''
 
   const typeLabel: Record<string, string> = {
@@ -21,6 +21,8 @@ export async function GET(request: NextRequest) {
     default: 'GVE Digital',
   }
 
+  const isDefault = type === 'default'
+
   return new ImageResponse(
     (
       <div
@@ -28,130 +30,207 @@ export async function GET(request: NextRequest) {
           width: '1200px',
           height: '630px',
           display: 'flex',
-          flexDirection: 'column',
           backgroundColor: '#2f4960',
           fontFamily: 'system-ui, sans-serif',
           position: 'relative',
           overflow: 'hidden',
         }}
       >
-        {/* Gradiente de fundo */}
+        {/* Gradiente radial */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse 80% 60% at 70% 30%, rgba(80,124,159,0.4) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse 70% 80% at 30% 50%, rgba(80,124,159,0.35) 0%, transparent 65%)',
           }}
         />
 
-        {/* Linha decorativa lateral */}
+        {/* Padrão de pontos decorativo no lado direito */}
+        <div
+          style={{
+            position: 'absolute',
+            right: '-20px',
+            top: '-20px',
+            width: '480px',
+            height: '480px',
+            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px)',
+            backgroundSize: '28px 28px',
+          }}
+        />
+
+        {/* Linha decorativa lateral esquerda */}
         <div
           style={{
             position: 'absolute',
             left: 0,
             top: 0,
             bottom: 0,
-            width: '6px',
-            backgroundColor: '#507c9f',
+            width: '5px',
+            background: 'linear-gradient(to bottom, #507c9f, rgba(80,124,159,0.3))',
           }}
         />
 
-        {/* Conteúdo principal */}
+        {/* Layout: coluna esquerda (texto) + coluna direita (logo) */}
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
+            width: '100%',
             height: '100%',
-            padding: '60px 80px',
             position: 'relative',
           }}
         >
-          {/* Topo: tipo + categoria */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.15)',
-                color: 'rgba(255,255,255,0.9)',
-                fontSize: '18px',
-                fontWeight: 600,
-                padding: '8px 20px',
-                borderRadius: '999px',
-              }}
-            >
-              {typeLabel[type] ?? 'GVE Digital'}
-            </div>
-            {category && (
-              <div
-                style={{
-                  backgroundColor: 'rgba(80,124,159,0.4)',
-                  color: 'rgba(255,255,255,0.75)',
-                  fontSize: '16px',
-                  padding: '8px 20px',
-                  borderRadius: '999px',
-                }}
-              >
-                {category}
-              </div>
-            )}
-          </div>
-
-          {/* Título */}
+          {/* ── Coluna esquerda ── */}
           <div
             style={{
-              color: '#ffffff',
-              fontSize: title.length > 60 ? '44px' : '52px',
-              fontWeight: 700,
-              lineHeight: 1.2,
-              letterSpacing: '-0.02em',
-              maxWidth: '900px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              padding: '56px 60px 52px 72px',
+              flex: 1,
             }}
           >
-            {title}
-          </div>
-
-          {/* Rodapé: descrição + marca */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {description && (
+            {/* Topo: badge de tipo + categoria */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div
                 style={{
-                  color: 'rgba(255,255,255,0.7)',
-                  fontSize: '22px',
-                  lineHeight: 1.5,
-                  maxWidth: '800px',
+                  backgroundColor: 'rgba(255,255,255,0.12)',
+                  color: 'rgba(255,255,255,0.9)',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  padding: '7px 18px',
+                  borderRadius: '999px',
+                  border: '1px solid rgba(255,255,255,0.15)',
                 }}
               >
-                {description.length > 120 ? description.slice(0, 120) + '…' : description}
+                {typeLabel[type] ?? 'GVE Digital'}
               </div>
-            )}
+              {category && (
+                <div
+                  style={{
+                    backgroundColor: 'rgba(80,124,159,0.35)',
+                    color: 'rgba(255,255,255,0.75)',
+                    fontSize: '14px',
+                    padding: '7px 16px',
+                    borderRadius: '999px',
+                  }}
+                >
+                  {category}
+                </div>
+              )}
+            </div>
 
-            {/* Marca */}
+            {/* Título */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div
+                style={{
+                  color: '#ffffff',
+                  fontSize: title.length > 55 ? '40px' : '50px',
+                  fontWeight: 800,
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.025em',
+                  maxWidth: '580px',
+                }}
+              >
+                {title}
+              </div>
+              <div
+                style={{
+                  color: 'rgba(255,255,255,0.65)',
+                  fontSize: '19px',
+                  lineHeight: 1.55,
+                  maxWidth: '540px',
+                }}
+              >
+                {description.length > 110 ? description.slice(0, 110) + '…' : description}
+              </div>
+
+              {/* Credenciais — só nas páginas default */}
+              {isDefault && (
+                <div style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
+                  {['40+ empresas B2B', 'R$300k+ em mídia', '3+ anos no mercado'].map((item) => (
+                    <div
+                      key={item}
+                      style={{
+                        backgroundColor: 'rgba(255,255,255,0.08)',
+                        border: '1px solid rgba(255,255,255,0.14)',
+                        color: 'rgba(255,255,255,0.8)',
+                        fontSize: '13px',
+                        fontWeight: 600,
+                        padding: '6px 14px',
+                        borderRadius: '6px',
+                      }}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Rodapé: favicon + domínio */}
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '12px',
-                borderTop: '1px solid rgba(255,255,255,0.15)',
+                borderTop: '1px solid rgba(255,255,255,0.12)',
                 paddingTop: '20px',
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={faviconSrc}
-                alt="GVE Digital"
-                width={44}
-                height={44}
-                style={{ borderRadius: '8px', objectFit: 'contain' }}
+                alt=""
+                width={36}
+                height={36}
+                style={{ borderRadius: '6px', objectFit: 'contain' }}
               />
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 700 }}>
+                <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 700 }}>
                   GVE Digital
                 </span>
-                <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
-                  gvedigital.com · Marketing Comercial B2B
+                <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '13px' }}>
+                  gvedigital.com
                 </span>
               </div>
             </div>
+          </div>
+
+          {/* ── Coluna direita: logo ── */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '380px',
+              flexShrink: 0,
+              padding: '60px 48px',
+              position: 'relative',
+            }}
+          >
+            {/* Brilho atrás da logo */}
+            <div
+              style={{
+                position: 'absolute',
+                width: '280px',
+                height: '280px',
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(80,124,159,0.3) 0%, transparent 70%)',
+              }}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={logoSrc}
+              alt="GVE Digital"
+              width={280}
+              height={80}
+              style={{
+                objectFit: 'contain',
+                filter: 'brightness(0) invert(1)',
+                opacity: 0.9,
+                position: 'relative',
+              }}
+            />
           </div>
         </div>
       </div>
