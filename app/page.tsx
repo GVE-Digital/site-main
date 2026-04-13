@@ -469,23 +469,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* ⚠️ TODO: substituir pelo case real com métricas validadas antes do deploy */}
-              <div className="card p-6 border-l-4" style={{ borderLeftColor: '#507c9f' }}>
-                <div
-                  className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full mb-4"
-                  style={{ backgroundColor: '#e0eaf3', color: '#2f4960' }}
-                >
-                  Case em destaque
-                </div>
-                <div
-                  className="p-4 rounded-lg text-center"
-                  style={{ backgroundColor: '#f8fafc', border: '1px dashed #d0e0ec' }}
-                >
-                  <p className="text-sm text-gray-400 italic">
-                    ⚠️ TODO: preencher com case real antes do deploy.
-                  </p>
-                </div>
-              </div>
+              {/* Case em destaque — temporariamente oculto até adicionar cases reais */}
             </div>
           </div>
         </div>
@@ -515,9 +499,7 @@ export default function HomePage() {
               Agendar diagnóstico gratuito
               <ArrowRight size={16} aria-hidden="true" />
             </TrackedLink>
-            <Link href="/cases" className="btn btn-lg btn-outline-white">
-              Ver cases
-            </Link>
+            {/* Botão "Ver cases" — temporariamente oculto até adicionar cases reais */}
           </div>
 
           <p className="mt-5 text-xs" style={{ color: 'rgba(255,255,255,0.45)' }}>

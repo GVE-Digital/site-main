@@ -11,7 +11,7 @@ const navLinks = [
   { href: '/',         label: 'Início' },
   { href: '/sobre',    label: 'Sobre' },
   { href: '/servicos', label: 'Serviços' },
-  { href: '/cases',    label: 'Cases' },
+  // { href: '/cases', label: 'Cases' }, // temporariamente oculto até adicionar cases reais
   { href: '/blog',     label: 'Blog' },
 ]
 
