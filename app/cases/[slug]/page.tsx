@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import ContactForm from '@/components/ContactForm'
 import { getCaseBySlug, getAllCaseSlugs } from '@/lib/mdx'
 import { ArrowRight, ChevronLeft } from 'lucide-react'
 
@@ -126,51 +129,58 @@ export default function CasePage({ params }: Props) {
       {/* Conteúdo */}
       <section className="section" style={{ backgroundColor: '#f2f2f2' }}>
         <div className="container mx-auto px-6" style={{ maxWidth: '1280px' }}>
-          <div className="max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-            {/* Placeholder obrigatório */}
-            {/* ⚠️ TODO: preencher conteúdo real antes do deploy */}
-            <div
-              className="card p-8 mb-8 text-center"
-              style={{ border: '1px dashed #d0e0ec' }}
-            >
-              <p className="text-sm text-gray-400 italic mb-2">
-                ⚠️ TODO: conteúdo completo do case a ser preenchido antes do deploy.
-              </p>
-              <p className="text-xs text-gray-400">
-                Incluir: contexto do cliente (anônimo se necessário), desafio, solução executada fase a fase, resultados em números e depoimento validado pelo cliente.
-              </p>
-              <p className="text-xs font-semibold text-red-400 mt-3">
-                Regra GVE: nunca inventar métricas, nomes ou citações.
-              </p>
-            </div>
-
-            {c.content && (
-              <div className="card p-8 prose text-gray-600">
-                <div className="whitespace-pre-line text-sm leading-relaxed">
-                  {c.content}
+            {/* Conteúdo principal */}
+            <div className="lg:col-span-2">
+              {c.content ? (
+                <article className="card p-8 prose mb-8">
+                  <MDXRemote source={c.content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
+                </article>
+              ) : (
+                <div
+                  className="card p-8 mb-8 text-center"
+                  style={{ border: '1px dashed #d0e0ec' }}
+                >
+                  <p className="text-sm text-gray-400 italic">
+                    Conteúdo do case ainda não disponível.
+                  </p>
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Voltar */}
-            <div className="mt-10 flex items-center justify-between">
-              <Link
-                href="/cases"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold"
-                style={{ color: '#507c9f' }}
-              >
-                <ChevronLeft size={16} aria-hidden="true" />
-                Todos os cases
-              </Link>
-              <Link
-                href="/contato"
-                className="btn btn-primary"
-              >
-                Quero um resultado assim
-                <ArrowRight size={16} aria-hidden="true" />
-              </Link>
+              {/* Voltar */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <Link
+                  href="/cases"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold"
+                  style={{ color: '#507c9f' }}
+                >
+                  <ChevronLeft size={16} aria-hidden="true" />
+                  Todos os cases
+                </Link>
+                <Link
+                  href="/contato"
+                  className="btn btn-primary"
+                >
+                  Quero um resultado assim
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </div>
             </div>
+
+            {/* Sidebar — formulário */}
+            <div className="lg:col-span-1">
+              <div className="card p-6 sticky top-28">
+                <p className="text-sm font-bold mb-1" style={{ color: '#2f4960' }}>
+                  Quer um resultado como esse?
+                </p>
+                <p className="text-xs text-gray-500 mb-5">
+                  Agende um diagnóstico gratuito e veja como a metodologia GVED se aplica ao seu cenário.
+                </p>
+                <ContactForm formType={`case-${params.slug}`} />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

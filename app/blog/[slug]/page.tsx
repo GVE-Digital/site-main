@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ContactForm from '@/components/ContactForm'
 import { getPostBySlug, getAllPostSlugs, getRelatedPosts } from '@/lib/mdx'
@@ -156,7 +157,7 @@ export default function BlogPostPage({ params }: Props) {
               <div className="card p-8 mb-8">
                 {post.content ? (
                   <article className="prose">
-                    <MDXRemote source={post.content} />
+                    <MDXRemote source={post.content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
                   </article>
                 ) : (
                   <div
