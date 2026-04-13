@@ -96,6 +96,13 @@ O `ContactForm.tsx` é o componente mais crítico do site. Ao modificá-lo:
 - O botão de WhatsApp só deve aparecer no estado `status === 'success'`
 - Validação com `aria-invalid`, `aria-describedby` e foco no primeiro campo com erro
 
+### Netlify Forms v5
+
+O `@netlify/plugin-nextjs` v5 roteia tudo pelo runtime Next.js — o Netlify não escaneia o HTML gerado em produção da forma convencional. Dois pontos críticos:
+
+- **Detecção do formulário:** a página `app/netlify-forms/page.tsx` existe apenas para que o Netlify escaneie e registre o formulário. Não remover.
+- **URL do POST:** o fetch do `ContactForm.tsx` aponta para `/netlify-forms` (não para `/`). Alterar isso quebra o recebimento dos submits no Netlify.
+
 ---
 
 ## CAPI (Meta Conversions API)
@@ -159,12 +166,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 ## Adicionando um case
 
-1. Criar `content/cases/meu-slug.mdx`:
+1. Copiar `content/cases/_exemplo-case.mdx` e renomear para o slug desejado
+2. Preencher o frontmatter:
    ```yaml
    title, description, date, sector, service, result, draft: false
    ```
-2. **Nunca inventar métricas, nomes ou depoimentos** — usar dados reais validados pelo cliente
-3. Se o cliente preferir anonimato: "Empresa do setor de Indústria Metalúrgica"
+3. Estrutura recomendada do conteúdo: **O que foi feito** → **Resultados** (tabela) → **Depoimento** (opcional)
+4. Tabelas Markdown são suportadas via `remark-gfm` — usar `| col | col |` normalmente
+5. **Nunca inventar métricas, nomes ou depoimentos** — usar dados reais validados pelo cliente
+6. Se o cliente preferir anonimato: "Empresa do setor de Indústria Metalúrgica"
 
 ---
 
@@ -187,17 +197,18 @@ curl -X POST http://localhost:3000/api/revalidate \
 
 Sinalizados no código com `// ⚠️ TODO:`. Os críticos:
 
-| Item | Arquivo |
-|------|---------|
-| GTM ID (`GTM-XXXXXXX`) | `app/layout.tsx` |
-| Meta Pixel ID | `app/layout.tsx`, `components/ContactForm.tsx` |
-| `META_CAPI_TOKEN_<PIXEL_ID>` | Netlify Environment Variables |
-| Logo SVG (horizontal + ícone + versão branca) | `public/` |
-| `perfil2.png` (foto Gabriel) | `public/perfil2.png` |
-| Ao menos 2 cases reais | `content/cases/` |
-| Conteúdo dos 5 posts do blog | `content/blog/*.mdx` (remover `draft: true`) |
-| Imagens OG 1200×630 | `public/og/*.png` |
-| YouTube URL | `components/Footer.tsx`, `app/layout.tsx` schema |
+| Item | Status | Arquivo |
+|------|--------|---------|
+| GTM ID `GTM-K3T7K8DD` | ✅ Feito | `app/layout.tsx` |
+| Meta Pixel `1276444017301444` | ✅ Feito | `app/layout.tsx`, `ContactForm.tsx` |
+| `META_CAPI_TOKEN_1276444017301444` no `.env.local` | ✅ Feito | `.env.local` |
+| `META_CAPI_TOKEN_1276444017301444` no painel Netlify | ⚠️ Pendente | Netlify → Environment Variables |
+| Logos, favicon, foto do fundador | ✅ Feito | `public/` |
+| OG dinâmico | ✅ Feito | `app/og/route.tsx` |
+| YouTube `@GVEDigital` | ✅ Feito | `Footer.tsx`, schema Organization |
+| 3 cases reais | ✅ Feito | `content/cases/` |
+| Conteúdo dos posts do blog | ⚠️ Pendente | `content/blog/*.mdx` (remover `draft: true`) |
+| `REVALIDATION_SECRET` no Netlify | ⚠️ Pendente | Netlify → Environment Variables |
 
 ---
 

@@ -140,7 +140,7 @@ draft: false                    # remover draft: true para publicar
 ---
 ```
 
-3. Escrever o conteúdo em Markdown abaixo do frontmatter
+3. Escrever o conteúdo em Markdown abaixo do frontmatter — tabelas GFM são suportadas via `remark-gfm`
 4. Deploy na `main` ou disparar revalidação via `/api/revalidate`
 
 ### Adicionar um case
@@ -240,9 +240,9 @@ Configurações em `netlify.toml`:
 - [x] Logos, favicon e foto do fundador adicionados em `public/`
 - [x] OG dinâmico via `@vercel/og` — sem necessidade de imagens estáticas por rota
 - [x] YouTube `@GVEDigital` no Footer e schema Organization
+- [x] 3 cases reais adicionados em `content/cases/`
 - [ ] Configurar `META_CAPI_TOKEN_1276444017301444` no painel Netlify (env var)
-- [ ] Criar ao menos 2 cases reais em `content/cases/`
-- [ ] Escrever conteúdo dos 5 posts do blog e remover `draft: true`
+- [ ] Escrever conteúdo dos posts do blog e remover `draft: true`
 - [ ] Configurar `REVALIDATION_SECRET` no Netlify
 - [ ] Validar schemas com [Google Rich Results Test](https://search.google.com/test/rich-results)
 
