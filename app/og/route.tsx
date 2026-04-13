@@ -4,7 +4,10 @@ import { NextRequest } from 'next/server'
 export const runtime = 'edge'
 
 export async function GET(request: NextRequest) {
-  const { searchParams } = request.nextUrl
+  const { searchParams, origin } = request.nextUrl
+
+  // Carrega o favicon para usar na imagem OG
+  const faviconSrc = `${origin}/gve-favicon.png`
 
   const title       = searchParams.get('title')       || 'GVE Digital'
   const description = searchParams.get('description') || 'Marketing Comercial B2B'
@@ -132,22 +135,14 @@ export async function GET(request: NextRequest) {
                 paddingTop: '20px',
               }}
             >
-              <div
-                style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '8px',
-                  backgroundColor: '#507c9f',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#fff',
-                  fontSize: '16px',
-                  fontWeight: 700,
-                }}
-              >
-                GV
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={faviconSrc}
+                alt="GVE Digital"
+                width={44}
+                height={44}
+                style={{ borderRadius: '8px', objectFit: 'contain' }}
+              />
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <span style={{ color: '#ffffff', fontSize: '18px', fontWeight: 700 }}>
                   GVE Digital
