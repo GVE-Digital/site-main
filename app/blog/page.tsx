@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import { getAllPosts } from '@/lib/mdx'
 import { ArrowRight, ChevronRight, Calendar, Tag } from 'lucide-react'
@@ -101,13 +102,14 @@ export default function BlogPage() {
             {posts.length > 0 ? (
               posts.map(post => (
                 <article key={post.slug} className="card group overflow-hidden flex flex-col" aria-label={post.title}>
-                  {/* ⚠️ TODO: substituir por imagem real do post */}
-                  <div
-                    className="h-48 flex items-center justify-center"
-                    style={{ backgroundColor: '#e0eaf3' }}
-                    aria-hidden="true"
-                  >
-                    <span className="text-xs text-gray-400">⚠️ Imagem do post</span>
+                  <div className="relative h-48 overflow-hidden" style={{ backgroundColor: '#e0eaf3' }}>
+                    <Image
+                      src={post.image || '/gve-logo.png'}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-2 mb-3">
