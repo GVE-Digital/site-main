@@ -35,9 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: ['Gabriel Vieira'],
       images: [
         {
-          url: `https://gvedigital.com/og?type=blog&title=${encodeURIComponent(post.title)}&description=${encodeURIComponent(post.description)}&category=${encodeURIComponent(post.category || '')}`,
-          width: 1200,
-          height: 630,
+          url: post.image || 'https://gvedigital.com/gve-logo.png',
           alt: post.title,
         },
       ],
@@ -78,7 +76,7 @@ export default function BlogPostPage({ params }: Props) {
     datePublished: post.date,
     dateModified: post.date,
     keywords: post.keywords?.join(', '),
-    image: post.image || `https://gvedigital.com/og?type=blog&title=${encodeURIComponent(post.title)}&description=${encodeURIComponent(post.description)}&category=${encodeURIComponent(post.category || '')}`,
+    image: post.image || 'https://gvedigital.com/gve-logo.png',
     author: {
       '@type': 'Person',
       name: 'Gabriel Vieira',
