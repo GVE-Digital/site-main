@@ -11,37 +11,151 @@ keywords:
   - "agência marketing b2b"
 author: "Gabriel Vieira"
 image: ""
-draft: true
+draft: false
 ---
 
-<!-- ⚠️ TODO: conteúdo do post pendente de redação.
+Tem um atrito que aparece em praticamente toda empresa B2B que começa a investir em mídia paga: o marketing entrega leads, o comercial reclama que são ruins, e ninguém consegue medir exatamente o que está errado.
 
-Estrutura sugerida para este artigo:
+O problema quase sempre é o mesmo. Não existe uma definição compartilhada do que é um lead bom.
 
-## O que é MQL (Marketing Qualified Lead)?
-Definição clara e aplicada ao contexto B2B.
-Diferença entre MQL, SQL e lead não qualificado.
+Marketing está medindo volume e CPL. Comercial está medindo tempo perdido em ligações sem retorno. Os dois estão certos — e nenhum está falando a mesma língua.
 
-## Por que o seu comercial reclama dos leads de marketing?
-Leads sem critério = tempo perdido do comercial.
-O gap entre marketing e vendas na maioria das empresas B2B.
+O conceito de MQL existe para resolver esse atrito. Não como jargão de marketing, mas como acordo operacional entre quem gera lead e quem fecha negócio.
+
+---
+
+## O que é MQL — e o que diferencia de SQL e lead não qualificado
+
+**MQL** (Marketing Qualified Lead) é o lead que passou por um filtro de qualificação inicial e tem perfil compatível com o cliente ideal — cargo, empresa, setor, porte e sinal de interesse ou dor ativa. É o lead que o marketing entrega para o comercial com a indicação: *"esse vale o seu tempo"*.
+
+**SQL** (Sales Qualified Lead) é o MQL que o comercial conversou e confirmou: existe urgência real, autoridade de decisão e processo de compra em curso. É a oportunidade que entra no pipeline com probabilidade real de fechamento.
+
+**Lead não qualificado** é o contato que preencheu o formulário mas não tem fit com o ICP — cargo errado, empresa pequena demais, setor sem aderência, ou sem qualquer sinal de intenção além do clique. Não é lead ruim necessariamente. É lead para nurturing ou descarte, não para abordagem comercial imediata.
+
+A confusão entre os três é o que gera a briga entre marketing e vendas. Quando todo lead que chega do formulário vai direto para o comercial sem filtro, o time de vendas perde tempo qualificando o que marketing deveria ter filtrado — e começa a tratar todos os leads como ruins por padrão.
+
+---
+
+## Por que o comercial reclama dos leads de marketing
+
+A reclamação mais comum é essa: *"os leads não têm perfil"*, *"ninguém atende"*, *"chegam leads de pessoas sem poder de compra"*.
+
+Raramente é problema de campanha. Quase sempre é problema de ausência de critério.
+
+Quando não existe definição clara de MQL, qualquer formulário preenchido é tratado como lead para o comercial. Isso cria dois problemas simultâneos:
+
+**O comercial perde tempo.** Cada lead fora do perfil que recebe ligação do SDR é tempo que poderia estar em uma oportunidade real. Em operações com volume médio de 50 a 200 leads por mês, isso representa horas semanais de trabalho desperdiçado — e, com o tempo, desmotivação do time.
+
+**O algoritmo aprende errado.** Esse é o impacto menos visível, mas o mais caro. As plataformas de mídia paga — Meta Ads e Google Ads — aprendem com os dados de conversão que recebem. Se todos os leads que preenchem formulário são marcados como conversão, independentemente de qualidade, o algoritmo otimiza para encontrar mais pessoas parecidas com quem preencheu formulário — não com quem tem perfil de compra. Em 60 a 90 dias, o volume de leads fora do ICP tende a aumentar, não diminuir.
+
+O filtro de MQL resolve os dois problemas ao mesmo tempo: protege o tempo do comercial e alimenta o algoritmo com o sinal certo.
+
+---
 
 ## Como definir critérios de MQL no B2B
-Perfil demográfico (cargo, empresa, setor, porte).
-Sinal comportamental (páginas visitadas, conteúdo consumido, formulário preenchido).
-Filtro declarativo (dropdown de dor no formulário).
+
+Não existe definição universal de MQL. O que qualifica um lead para o comercial depende do ICP de cada empresa, do ticket médio, do ciclo de venda e do que o time comercial é capaz de trabalhar com eficiência.
+
+Mas existe uma estrutura de critérios que funciona como ponto de partida para qualquer operação B2B:
+
+**Perfil demográfico — quem é o lead**
+
+- Cargo: o lead ocupa posição com poder de compra ou influência relevante na decisão?
+- Empresa: está no setor e porte que fazem parte do ICP?
+- Localização: atendível pelo modelo comercial da empresa?
+
+**Sinal declarativo — o que o lead disse**
+
+A pergunta qualificadora do formulário é o dado mais valioso aqui. Quando o lead responde *"nosso maior desafio é gerar leads qualificados para o time comercial"* ou indica o porte da empresa em um dropdown, ele está entregando contexto que o SDR normalmente levaria duas ligações para descobrir.
+
+Esse sinal declarativo, salvo no CRM junto com o lead, é o que torna a abordagem do primeiro contato personalizada — e aumenta significativamente a taxa de conexão e qualificação.
+
+**Sinal comportamental — o que o lead fez**
+
+Páginas do site visitadas antes da conversão, conteúdos consumidos, número de visitas antes de preencher o formulário. Um lead que visitou a página de cases e a página de preços antes de converter sinaliza intenção diferente de um que clicou no anúncio e preencheu o formulário sem navegar pelo site.
+
+Esse tipo de dado está disponível no GA4 e pode ser integrado ao CRM para enriquecer o perfil do lead automaticamente.
+
+**Atenção:** critérios demográficos sozinhos não são suficientes. Um diretor comercial da empresa certa, do setor certo, sem nenhum sinal de dor ativa é um contato frio com bom perfil — não um MQL. O sinal de intenção precisa estar presente para justificar a abordagem.
+
+---
 
 ## O formulário como primeiro filtro de qualificação
-Por que o formulário da GVE tem o campo "Qual é sua principal dor?"
 
-## Integração MQL → CRM → Comercial
-Como o feedback do comercial retroalimenta o algoritmo de mídia.
+O formulário da landing page é onde o filtro de MQL começa — antes do SDR entrar em cena.
 
-## Como medir a taxa de MQL e o que é uma boa referência no B2B
+Campos básicos como nome, WhatsApp, e-mail e empresa identificam o lead. Cargo filtra autoridade. Mas é a **pergunta qualificadora** que faz o trabalho pesado de qualificação ainda no formulário.
 
-## Conclusão + CTA
+Uma pergunta bem escolhida entrega ao SDR o contexto da dor antes do primeiro contato:
 
-Palavras-chave a distribuir no texto:
-leads qualificados b2b, como qualificar leads b2b,
-mql marketing, agência marketing b2b, consultoria marketing b2b
--->
+- *"Qual é o maior desafio comercial da sua empresa hoje?"*
+- *"Quantos leads novos o seu time comercial precisa trabalhar por mês?"*
+- *"Qual é o porte da sua empresa?"* (com opções de dropdown)
+
+A resposta a essa pergunta faz três coisas simultaneamente: filtra leads com perfil claramente fora do ICP, personaliza a abertura do SDR no primeiro contato e, quando salva no CRM com o lead, aumenta em 30 a 50% a taxa de qualificação para MQL — porque o SDR não está ligando às cegas.
+
+A tentação comum é adicionar mais campos para qualificar melhor. O efeito contrário é o que acontece: cada campo adicional reduz a taxa de conversão do formulário. A pergunta qualificadora resolve essa tensão — um campo que cumpre o trabalho de três.
+
+---
+
+## Da chegada do lead ao MQL: o papel do SDR
+
+O MQL não é definido automaticamente no momento do formulário. É definido depois do primeiro contato do SDR — quando ele confirma ou descarta o perfil do lead com base na conversa.
+
+Esse processo de qualificação precisa ser rápido e ter critérios claros, registrados no CRM. O SDR não pode qualificar por intuição — precisa de um framework que torne a decisão objetiva e rastreável.
+
+Os quatro elementos que uma qualificação B2B precisa investigar:
+
+**1. Dor ativa** — o problema existe hoje e está causando impacto mensurável no negócio? Não uma dor hipotética futura — uma dor que o decisor sente agora.
+
+**2. Fit de perfil** — a empresa está dentro do ICP? Porte, setor, cargo confirmados na conversa.
+
+**3. Autoridade** — quem toma a decisão de compra? O lead tem influência direta ou precisamos mapear o decisor?
+
+**4. Momento** — existe urgência real? O que acontece se o problema não for resolvido nos próximos três a seis meses?
+
+A combinação de dor ativa + fit + autoridade + urgência = MQL com alta probabilidade de avançar para SQL. Qualquer dimensão ausente sinaliza o próximo passo: nurturing, mapeamento do decisor, ou descarte com registro de motivo.
+
+---
+
+## Como o MQL retroalimenta o algoritmo de mídia
+
+Aqui está a conexão que a maioria das operações B2B ignora — e que é o maior diferencial de uma campanha que melhora com o tempo versus uma que estagna.
+
+Quando o SDR qualifica um lead como MQL no CRM, esse status precisa ser enviado de volta para as plataformas de mídia:
+
+- **Meta Ads** recebe o evento via Conversions API (CAPI), informando que aquele lead específico resultou em uma oportunidade real
+- **Google Ads** recebe o mesmo sinal via Enhanced Conversions for Leads, associado ao identificador de clique capturado no formulário
+
+Com esse loop fechado, os algoritmos param de otimizar para volume de formulário e passam a otimizar para o perfil de quem vira MQL. Em 60 a 90 dias, a diferença é perceptível: os leads chegam com cargo mais aderente, empresa mais próxima do ICP, e o SDR qualifica uma proporção maior dos contatos com menos esforço.
+
+Sem esse feedback, o custo por MQL não cai com o tempo — porque o sistema não aprende o que é qualidade para aquele negócio específico.
+
+---
+
+## O que é uma boa taxa de MQL no B2B
+
+Taxa de MQL é a proporção de leads recebidos que o comercial considera oportunidades válidas após o primeiro contato.
+
+| Taxa de MQL | Leitura |
+| --- | --- |
+| Abaixo de 10% | Sinal crítico — público, ICP ou filtro de formulário precisam revisão |
+| Entre 10% e 20% | Aceitável — há espaço para melhorar critérios de qualificação |
+| Acima de 20% | Referência saudável para a maioria das operações B2B |
+| Acima de 40% | Excelente — indica ICP bem definido e filtros de formulário eficientes |
+
+Uma ressalva importante: taxa de MQL alta com volume muito baixo não é necessariamente boa. O objetivo não é qualificar mais — é gerar mais leads qualificados. Um funil que gera 5 leads por mês com 80% de MQL tem resultado inferior a um que gera 80 leads por mês com 25% de MQL, em termos de oportunidades reais para o comercial.
+
+A métrica que resume o desempenho real do funil é o **CPL qualificado** — o custo por lead que o comercial considera válido, não o custo por formulário preenchido. É essa métrica que deve orientar decisões de otimização de campanha, não o CPL bruto.
+
+---
+
+## MQL como acordo, não como métrica
+
+O MQL funciona quando é um acordo entre marketing e comercial — não uma métrica que um time define sozinho e entrega para o outro.
+
+Quando os critérios de qualificação são definidos em conjunto, o marketing sabe o que precisa filtrar antes de passar o lead. O comercial sabe o que pode esperar. E ambos usam a mesma linguagem para medir resultado: não *"quantos leads vieram"*, mas *"quantos leads valeram o tempo do comercial"*.
+
+Essa clareza é o que transforma uma operação de mídia paga B2B de geradora de cliques em geradora de demanda previsível.
+
+Se você quer estruturar os critérios de MQL do seu funil e conectá-los à operação de mídia paga, o diagnóstico gratuito é o ponto de partida.
