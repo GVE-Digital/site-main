@@ -241,8 +241,8 @@ Configurações em `netlify.toml`:
 - [x] OG dinâmico via `@vercel/og` — sem necessidade de imagens estáticas por rota
 - [x] YouTube `@GVEDigital` no Footer e schema Organization
 - [x] 3 cases reais adicionados em `content/cases/`
+- [x] 5 posts do blog publicados em `content/blog/`
 - [ ] Configurar `META_CAPI_TOKEN_1276444017301444` no painel Netlify (env var)
-- [ ] Escrever conteúdo dos posts do blog e remover `draft: true`
 - [ ] Configurar `REVALIDATION_SECRET` no Netlify
 - [ ] Validar schemas com [Google Rich Results Test](https://search.google.com/test/rich-results)
 

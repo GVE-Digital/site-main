@@ -66,65 +66,8 @@ export default function CasesPage() {
         <div className="container mx-auto px-6" style={{ maxWidth: '1280px' }}>
 
           {cases.length === 0 ? (
-            /* ⚠️ TODO: remover placeholder e preencher com cases reais antes do deploy */
-            <div>
-              <div
-                className="p-8 rounded-xl text-center mb-10"
-                style={{ backgroundColor: '#fff3cd', border: '1px dashed #f59e0b' }}
-              >
-                <p className="text-sm font-semibold text-yellow-800 mb-1">
-                  ⚠️ TODO: Cases pendentes de preenchimento
-                </p>
-                <p className="text-xs text-yellow-700">
-                  Preencher ao menos 2 cases antes do deploy com: cliente (ou "Empresa do setor X"), setor, problema, solução executada, resultado em números e depoimento validado. Regra GVE: nunca inventar métricas.
-                </p>
-              </div>
-
-              {/* Placeholders visuais */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[1, 2, 3].map(i => (
-                  <div
-                    key={i}
-                    className="card p-7"
-                    style={{ opacity: 0.6 }}
-                    aria-hidden="true"
-                  >
-                    <div
-                      className="h-3 rounded mb-3"
-                      style={{ backgroundColor: '#e0eaf3', width: '40%' }}
-                    />
-                    <div
-                      className="h-5 rounded mb-2"
-                      style={{ backgroundColor: '#e0eaf3', width: '85%' }}
-                    />
-                    <div
-                      className="h-4 rounded mb-4"
-                      style={{ backgroundColor: '#f0f5fa', width: '70%' }}
-                    />
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      {[1, 2].map(j => (
-                        <div
-                          key={j}
-                          className="p-3 rounded-lg text-center"
-                          style={{ backgroundColor: '#f0f5fa' }}
-                        >
-                          <div
-                            className="h-6 rounded mx-auto mb-1"
-                            style={{ backgroundColor: '#d0e0ec', width: '50%' }}
-                          />
-                          <div
-                            className="h-3 rounded mx-auto"
-                            style={{ backgroundColor: '#e0eaf3', width: '70%' }}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    <p className="text-xs text-gray-400 italic text-center">
-                      ⚠️ TODO: case real
-                    </p>
-                  </div>
-                ))}
-              </div>
+            <div className="text-center py-16 text-gray-400 text-sm italic">
+              Nenhum case disponível no momento.
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

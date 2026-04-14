@@ -97,10 +97,8 @@ export default function BlogPage() {
             </div>
           ) : null}
 
-          {/* Se não houver posts publicados, mostrar os drafts para fins de desenvolvimento */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.length > 0 ? (
-              posts.map(post => (
+            {posts.map(post => (
                 <article key={post.slug} className="card group overflow-hidden flex flex-col" aria-label={post.title}>
                   <div className="relative h-48 overflow-hidden" style={{ backgroundColor: '#e0eaf3' }}>
                     <Image
@@ -145,47 +143,6 @@ export default function BlogPage() {
                       Ler artigo
                       <ChevronRight size={14} aria-hidden="true" className="transition-transform group-hover:translate-x-0.5" />
                     </Link>
-                  </div>
-                </article>
-              ))
-            ) : (
-              /* Placeholders visuais para posts em draft */
-              [
-                { slug: 'como-estruturar-geracao-de-demanda-b2b-meta-google-ads', title: 'Como estruturar geração de demanda B2B com Meta Ads e Google Ads', category: 'Mídia Paga' },
-                { slug: 'o-que-e-mql-lead-qualificado-b2b', title: 'O que é MQL e por que o seu comercial precisa de leads qualificados', category: 'Inteligência Comercial' },
-                { slug: 'por-que-agencias-de-trafego-falham-no-b2b', title: 'Por que a maioria das agências de tráfego falha no B2B', category: 'Estratégia' },
-                { slug: 'icp-como-definir-cliente-ideal-antes-de-investir-em-midia', title: 'ICP: como definir o perfil do cliente ideal antes de investir em mídia', category: 'Inteligência Comercial' },
-                { slug: 'funil-de-aquisicao-b2b-da-campanha-ao-crm', title: 'Funil de aquisição B2B: da campanha ao CRM em 5 etapas', category: 'Estratégia' },
-              ].map(post => (
-                <article
-                  key={post.slug}
-                  className="card overflow-hidden flex flex-col"
-                  style={{ opacity: 0.7 }}
-                >
-                  <div
-                    className="h-48 flex items-center justify-center"
-                    style={{ backgroundColor: '#e0eaf3' }}
-                    aria-hidden="true"
-                  >
-                    <span className="text-xs text-gray-400">⚠️ TODO: imagem</span>
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <span
-                      className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full mb-3 self-start"
-                      style={{ backgroundColor: '#e0eaf3', color: '#2f4960' }}
-                    >
-                      <Tag size={10} aria-hidden="true" />
-                      {post.category}
-                    </span>
-                    <h2
-                      className="font-bold text-base mb-2 leading-snug flex-1"
-                      style={{ color: '#2f4960' }}
-                    >
-                      {post.title}
-                    </h2>
-                    <p className="text-xs text-gray-400 italic mt-auto">
-                      ⚠️ Draft — adicionar conteúdo e remover draft:true para publicar
-                    </p>
                   </div>
                 </article>
               ))

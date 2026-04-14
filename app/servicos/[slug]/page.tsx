@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ContactForm from '@/components/ContactForm'
-import { getServiceBySlug, getAllServiceSlugs } from '@/lib/mdx'
+import { getServiceBySlug, getAllServiceSlugs, getAllCases } from '@/lib/mdx'
 import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react'
 
 interface Props {
@@ -35,6 +35,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function ServicoPage({ params }: Props) {
   const service = getServiceBySlug(params.slug)
   if (!service) notFound()
+
+  const cases = getAllCases().slice(0, 3)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -196,21 +198,37 @@ export default function ServicoPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Cases relacionados — placeholder */}
+              {/* Cases relacionados */}
               <div className="card p-8">
-                <h2 className="font-bold text-xl mb-4" style={{ color: '#2f4960' }}>
+                <h2 className="font-bold text-xl mb-6" style={{ color: '#2f4960' }}>
                   Cases relacionados
                 </h2>
-                {/* ⚠️ TODO: popular com cases reais antes do deploy */}
-                <div
-                  className="p-6 rounded-lg text-center"
-                  style={{ backgroundColor: '#f8fafc', border: '1px dashed #d0e0ec' }}
-                >
-                  <p className="text-sm text-gray-400 italic">
-                    ⚠️ TODO: inserir cases reais com métricas validadas antes do deploy.
-                  </p>
+                <div className="space-y-4">
+                  {cases.map(c => (
+                    <Link
+                      key={c.slug}
+                      href={`/cases/${c.slug}`}
+                      className="block p-4 rounded-xl group"
+                      style={{ backgroundColor: '#f8fafc', border: '1px solid #e5e7eb', textDecoration: 'none' }}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <span
+                          className="text-xs font-bold px-2 py-0.5 rounded-full"
+                          style={{ backgroundColor: '#e0eaf3', color: '#2f4960' }}
+                        >
+                          {c.sector}
+                        </span>
+                      </div>
+                      <p className="font-bold text-sm mb-1 group-hover:text-gve-blue transition-colors" style={{ color: '#2f4960' }}>
+                        {c.title}
+                      </p>
+                      {c.result && (
+                        <p className="text-xs text-gray-500">→ {c.result}</p>
+                      )}
+                    </Link>
+                  ))}
                 </div>
-                <div className="mt-4 text-center">
+                <div className="mt-5 text-center">
                   <Link href="/cases" className="text-sm font-semibold" style={{ color: '#507c9f' }}>
                     Ver todos os cases
                     <ChevronRight size={14} className="inline ml-1" aria-hidden="true" />

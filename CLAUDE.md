@@ -207,7 +207,7 @@ Sinalizados no código com `// ⚠️ TODO:`. Os críticos:
 | OG dinâmico | ✅ Feito | `app/og/route.tsx` |
 | YouTube `@GVEDigital` | ✅ Feito | `Footer.tsx`, schema Organization |
 | 3 cases reais | ✅ Feito | `content/cases/` |
-| Conteúdo dos posts do blog | ⚠️ Pendente | `content/blog/*.mdx` (remover `draft: true`) |
+| 5 posts do blog publicados | ✅ Feito | `content/blog/*.mdx` |
 | `REVALIDATION_SECRET` no Netlify | ⚠️ Pendente | Netlify → Environment Variables |
 
 ---
