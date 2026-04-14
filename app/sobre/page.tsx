@@ -39,7 +39,7 @@ const personSchema = {
     url: 'https://gvedigital.com',
   },
   sameAs: ['https://www.linkedin.com/in/gabriel-vieira-silva/'],
-  image: 'https://gvedigital.com/perfil2.png', // ⚠️ TODO: confirmar URL do arquivo perfil2.png
+  image: 'https://gvedigital.com/perfil2.png',
 }
 
 const FASES_RESUMIDAS = [
@@ -230,21 +230,9 @@ export default function SobrePage() {
           <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-wide mb-6">
             Parceiros oficiais de CRM
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <div
-              className="flex items-center gap-2 px-6 py-3 rounded-lg border font-semibold text-sm"
-              style={{ backgroundColor: '#fff', borderColor: '#e5e7eb', color: '#2f4960' }}
-            >
-              {/* ⚠️ TODO: logo Kommo CRM */}
-              Kommo CRM
-            </div>
-            <div
-              className="flex items-center gap-2 px-6 py-3 rounded-lg border font-semibold text-sm"
-              style={{ backgroundColor: '#fff', borderColor: '#e5e7eb', color: '#2f4960' }}
-            >
-              {/* ⚠️ TODO: logo Pipedrive */}
-              Pipedrive
-            </div>
+          <div className="flex flex-wrap justify-center gap-8 items-center">
+            <Image src="/kommo-partner-light.png" alt="Kommo Partner" width={140} height={47} />
+            <Image src="/pipedrive-affiliate-light.png" alt="Pipedrive Affiliate Partner" width={136} height={60} />
           </div>
         </div>
       </section>

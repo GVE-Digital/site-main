@@ -242,8 +242,7 @@ Configurações em `netlify.toml`:
 - [x] YouTube `@GVEDigital` no Footer e schema Organization
 - [x] 3 cases reais adicionados em `content/cases/`
 - [x] 5 posts do blog publicados em `content/blog/`
-- [ ] Configurar `META_CAPI_TOKEN_1276444017301444` no painel Netlify (env var)
-- [ ] Configurar `REVALIDATION_SECRET` no Netlify
+- [x] Configurar `META_CAPI_TOKEN_1276444017301444` no painel Netlify (env var)
 - [ ] Validar schemas com [Google Rich Results Test](https://search.google.com/test/rich-results)
 
 ### OG dinâmico

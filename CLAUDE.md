@@ -202,13 +202,13 @@ Sinalizados no código com `// ⚠️ TODO:`. Os críticos:
 | GTM ID `GTM-K3T7K8DD` | ✅ Feito | `app/layout.tsx` |
 | Meta Pixel `1276444017301444` | ✅ Feito | `app/layout.tsx`, `ContactForm.tsx` |
 | `META_CAPI_TOKEN_1276444017301444` no `.env.local` | ✅ Feito | `.env.local` |
-| `META_CAPI_TOKEN_1276444017301444` no painel Netlify | ⚠️ Pendente | Netlify → Environment Variables |
+| `META_CAPI_TOKEN_1276444017301444` no painel Netlify | ✅ Feito | Netlify → Environment Variables |
 | Logos, favicon, foto do fundador | ✅ Feito | `public/` |
 | OG dinâmico | ✅ Feito | `app/og/route.tsx` |
 | YouTube `@GVEDigital` | ✅ Feito | `Footer.tsx`, schema Organization |
 | 3 cases reais | ✅ Feito | `content/cases/` |
 | 5 posts do blog publicados | ✅ Feito | `content/blog/*.mdx` |
-| `REVALIDATION_SECRET` no Netlify | ⚠️ Pendente | Netlify → Environment Variables |
+| `REVALIDATION_SECRET` no Netlify | ➖ Não necessário | Conteúdo gerenciado via Git — rebuild automático no push |
 
 ---
 

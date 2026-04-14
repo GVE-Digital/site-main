@@ -87,21 +87,9 @@ export default function Footer() {
               Estratégia, Tecnologia e Previsibilidade para empresas B2B que precisam de demanda qualificada e pipeline comercial consistente.
             </p>
             {/* Badges parceiros */}
-            <div className="flex flex-wrap gap-2">
-              <span
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold"
-                style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.85)' }}
-              >
-                {/* ⚠️ TODO: logo Kommo CRM */}
-                Parceiro Kommo CRM
-              </span>
-              <span
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold"
-                style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.85)' }}
-              >
-                {/* ⚠️ TODO: logo Pipedrive */}
-                Parceiro Pipedrive
-              </span>
+            <div className="flex flex-wrap gap-8 items-center">
+              <Image src="/kommo-partner-dark.png" alt="Kommo Partner" width={120} height={40} />
+              <Image src="/pipedrive-affiliate-dark.png" alt="Pipedrive Affiliate Partner" width={120} height={53} />
             </div>
           </div>
 
@@ -177,7 +165,7 @@ export default function Footer() {
             {/* Redes sociais */}
             <div className="flex items-center gap-3">
               <a
-                href="https://www.linkedin.com/company/gvedigital-assessoria-de-marketing/"
+                href="https://www.linkedin.com/company/gvedigital/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-9 h-9 rounded-md transition-colors"

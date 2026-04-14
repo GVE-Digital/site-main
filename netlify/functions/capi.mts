@@ -5,8 +5,7 @@
  * Recebe eventos do browser, faz hash SHA-256 dos dados do usuário
  * e encaminha à API de Conversões do Meta com deduplicação por event_id.
  *
- * Variável de ambiente esperada: META_CAPI_TOKEN_<PIXEL_ID>
- * ⚠️ TODO: configurar a variável no painel Netlify após obter o PIXEL_ID
+ * Variável de ambiente: META_CAPI_TOKEN_<PIXEL_ID> (configurada no Netlify)
  */
 
 import crypto from 'crypto'
@@ -67,7 +66,6 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   // Recuperar token da variável de ambiente
-  // ⚠️ TODO: após configurar PIXEL_ID, criar variável META_CAPI_TOKEN_<PIXEL_ID> no Netlify
   const token = Netlify.env.get(`META_CAPI_TOKEN_${pixelId}`)
   if (!token) {
     console.error(`[CAPI] Token não encontrado para pixel ${pixelId}`)
@@ -100,8 +98,7 @@ export default async function handler(req: Request): Promise<Response> {
         custom_data: customData,
       },
     ],
-    // ⚠️ TODO: adicionar test_event_code durante validação no Events Manager
-    // test_event_code: 'TEST12345',
+    // test_event_code: 'TEST12345', // descomentar durante validação no Events Manager
   }
 
   // Remover campos undefined do user_data

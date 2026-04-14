@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ContactForm from '@/components/ContactForm'
@@ -199,21 +200,9 @@ export default function ContatoPage() {
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
                   Parceiros CRM
                 </p>
-                <div className="flex justify-center gap-3">
-                  <span
-                    className="px-3 py-1.5 rounded text-xs font-semibold"
-                    style={{ backgroundColor: '#fff', color: '#2f4960', border: '1px solid #d0e0ec' }}
-                  >
-                    {/* ⚠️ TODO: logo Kommo */}
-                    Kommo CRM
-                  </span>
-                  <span
-                    className="px-3 py-1.5 rounded text-xs font-semibold"
-                    style={{ backgroundColor: '#fff', color: '#2f4960', border: '1px solid #d0e0ec' }}
-                  >
-                    {/* ⚠️ TODO: logo Pipedrive */}
-                    Pipedrive
-                  </span>
+                <div className="flex flex-wrap justify-center gap-8 items-center">
+                  <Image src="/kommo-partner-light.png" alt="Kommo Partner" width={140} height={47} />
+                  <Image src="/pipedrive-affiliate-light.png" alt="Pipedrive Affiliate Partner" width={136} height={60} />
                 </div>
               </div>
             </div>

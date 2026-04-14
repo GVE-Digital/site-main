@@ -448,21 +448,9 @@ export default function HomePage() {
                 <h3 className="font-bold text-sm uppercase tracking-wide text-gray-400 mb-4">
                   Parceiros oficiais de CRM
                 </h3>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <div
-                    className="flex-1 flex items-center justify-center gap-2 p-4 rounded-lg border font-semibold text-sm"
-                    style={{ borderColor: '#e5e7eb', color: '#2f4960' }}
-                  >
-                    {/* ⚠️ TODO: logo Kommo CRM */}
-                    <span>Kommo CRM</span>
-                  </div>
-                  <div
-                    className="flex-1 flex items-center justify-center gap-2 p-4 rounded-lg border font-semibold text-sm"
-                    style={{ borderColor: '#e5e7eb', color: '#2f4960' }}
-                  >
-                    {/* ⚠️ TODO: logo Pipedrive */}
-                    <span>Pipedrive</span>
-                  </div>
+                <div className="flex flex-col sm:flex-row gap-8 items-center justify-center">
+                  <Image src="/kommo-partner-light.png" alt="Kommo Partner" width={140} height={47} />
+                  <Image src="/pipedrive-affiliate-light.png" alt="Pipedrive Affiliate Partner" width={136} height={60} />
                 </div>
                 <p className="text-xs text-gray-500 mt-3">
                   Integração nativa com os CRMs mais usados no mercado B2B — sem retrabalho no processo comercial.

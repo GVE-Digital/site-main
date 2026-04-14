@@ -83,7 +83,7 @@ const organizationSchema = {
   url: 'https://gvedigital.com',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://gvedigital.com/logo.svg', // ⚠️ TODO: substituir pelo SVG real
+    url: 'https://gvedigital.com/gve-favicon.png',
     width: 200,
     height: 60,
   },
@@ -118,7 +118,7 @@ const organizationSchema = {
     },
   ],
   sameAs: [
-    'https://www.linkedin.com/company/gvedigital-assessoria-de-marketing/',
+    'https://www.linkedin.com/company/gvedigital/',
     'https://www.instagram.com/gvedigitaltech/',
     'https://www.youtube.com/@GVEDigital',
   ],

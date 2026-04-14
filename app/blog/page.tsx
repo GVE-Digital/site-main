@@ -146,7 +146,7 @@ export default function BlogPage() {
                   </div>
                 </article>
               ))
-            )}
+            }
           </div>
 
           {/* CTA inline */}
