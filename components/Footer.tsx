@@ -18,6 +18,7 @@ const companyLinks = [
   { href: '/blog',        label: 'Blog' },
   { href: '/contato',     label: 'Contato' },
   { href: '/privacidade', label: 'Política de Privacidade' },
+  { href: '/termos',      label: 'Termos de Serviço' },
 ]
 
 export default function Footer() {
@@ -244,6 +245,15 @@ export default function Footer() {
               onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
             >
               Política de Privacidade
+            </Link>
+            <Link
+              href="/termos"
+              className="text-xs transition-colors"
+              style={{ color: 'rgba(255,255,255,0.45)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.75)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}
+            >
+              Termos de Serviço
             </Link>
           </div>
         </div>
